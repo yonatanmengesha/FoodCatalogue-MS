@@ -42,8 +42,8 @@ public class FoodCatalogueService {
 		List<FoodItem> foodItemList = fetchFoodItemList(restaurantId);
 		
 		Restaurant restaurant = fetchRestaurantDetailsFromRestaurantMS(restaurantId);
-		createFoodCataloguePage(foodItemList,restaurant);
-		return null;
+		return createFoodCataloguePage(foodItemList,restaurant);
+		
 	}
 
 	private FoodCataloguePage createFoodCataloguePage(List<FoodItem> foodItemList, Restaurant restaurant) {
