@@ -6,10 +6,8 @@ eureka:
 
 
 spring:
-    application:
-       name:FOOD-CATALOGUE-SERVICE
     datasource:
-       url : jdbc:mysql://localhost:3306/foodcataloguedb
+       url : jdbc:mysql://localhost:3306/foodcataloguedb #mysql-db.c3yo8caqi4fp.us-east-1.rds.amazonaws.com:3306/foodcataloguedb 
        password : root
        username : root 
        driver-class-name : com.mysql.cj.jdbc.Driver
