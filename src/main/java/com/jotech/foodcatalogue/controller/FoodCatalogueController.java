@@ -33,7 +33,7 @@ public class FoodCatalogueController {
 	}
 	
 	@GetMapping("/fetchRestaurantAndFoodItemsById/{restaurantId}")
-	public ResponseEntity<FoodCataloguePage>fetchRestaurantDetailsWithFoodMenue(@PathVariable Integer restaurantId){
+	public ResponseEntity<FoodCataloguePage>fetchRestaurantDetailsWithFoodMenue(@PathVariable("restaurantId")Integer restaurantId){
 		
 		FoodCataloguePage foodCataloguePage = foodCatalogueService.fetchFoodCataloguePageDetails(restaurantId);
 		

@@ -1,5 +1,6 @@
 package com.jotech.foodcatalogue.service;
 
+import java.rmi.UnknownHostException;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,8 +58,16 @@ public class FoodCatalogueService {
 	}
 
 	private Restaurant fetchRestaurantDetailsFromRestaurantMS(Integer restaurantId) {
+	
+		Restaurant restaurant=null;
+		
+		try {
+			restaurant =	restTemplate.getForObject("http://RestaurantListing/restaurant/fetchById/"+restaurantId, Restaurant.class);
+		}catch (Exception  e) {
+			e.printStackTrace();
+		}
 		    
-	return 	restTemplate.getForObject("http://RESTAURANT-SERVICE/fetchById/"+restaurantId, Restaurant.class);
+	return 	restaurant;
 	}
 
 	private List<FoodItem> fetchFoodItemList(Integer restaurantId) {
